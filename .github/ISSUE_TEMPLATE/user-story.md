@@ -7,4 +7,4 @@ assignees: MarkReddy87
 
 ---
 
-As a **role** I want to **cabpability**  so that I can **received beneift**
+As a **role** I want to **capability**  so that I can **received beneift**
