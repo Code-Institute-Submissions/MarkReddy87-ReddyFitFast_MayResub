@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #FA8620;
+    font-family: 'Poppins';
+    height: calc(100vh - 164px);
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+
+.main.logo {
+    width: fit-content;
+}
+
+.button-orange {
+    color: #FA8620;
+    background: #000;
+}
+
+.border-orange {
+    border: 1px solid #FA8620 !important;
+}
+
+.get-shopping-button {
+    min-width: 250px;
+    color: #FA8620;
+    background: #000;
+}
+
+.get-shopping-button:hover,
+.get-shopping-button:active,
+.get-shopping-button:focus,
+.button-orange:hover,
+.button-orange:active,
+.button-orange:focus {
+    background: #FA8620;
+    color: #000;
+}
+
+.orange {
+    color: #FA8620;
+    background: #000;
+}

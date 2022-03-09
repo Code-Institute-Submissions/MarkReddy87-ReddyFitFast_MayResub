@@ -17,12 +17,17 @@
     {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
+        <script src="https://kit.fontawesome.com/16250c17fc.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
         </script>
@@ -42,18 +47,18 @@
 
 <body>
     <header class="container-fluid fixed-top">
-        <div class="row">
+        <div id="top-nav" class="row bg-black pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo">
-                    <h2 class="logo-font my-0">Reddy<strong>Fit</strong>Fast</h2>
+                    <h2 class="logo-font my-0 orange">Reddy <strong>Fit </strong>Fast</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="">
                     <div class="input-group w-100">
-                        <input class="form-control rounded-pill border" type="text" name="q" placeholder="Search for an item...">
+                        <input class="form-control rounded-pill border border-orange orange" type="text" name="q" placeholder="Search for an item...">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border rounded-pill" type="submit">
+                            <button class="form-control btn button-orange border-orange rounded-pill" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -65,28 +70,28 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="nav-link" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expandable="false">
+                        <a href="#" class="nav-link button-orange id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expandable="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg"></i></div>
                                 <p class="my-0">User Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0 orange" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Manage Products</a>
+                                    <a href="" class="dropdown-item orange">Manage Products</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="" class="dropdown-item orange">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item orange">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Make an Account</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item orange">Make an Account</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item orange">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-wieght-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center">
+                            <div class="text-center button-orange">
                                 <div><i class="fas fa-shopping-cart"></i></div>
                                 <p my-0>
                                     {% if grand_total %}
