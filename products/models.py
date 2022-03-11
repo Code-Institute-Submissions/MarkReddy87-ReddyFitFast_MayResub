@@ -3,6 +3,11 @@ from django.db import models
 
 class Category(models.Model):
     """ model for product categories """
+
+    class Meta:
+        """ Fix plural spelling on admin panel """
+        verbose_name_plural = 'Categories'
+
     name = models.CharField(max_length=200)
     friendly_name = models.CharField(max_length=200, null=True, blank=True)
 
