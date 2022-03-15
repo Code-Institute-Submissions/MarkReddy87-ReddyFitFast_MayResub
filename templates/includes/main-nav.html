@@ -16,9 +16,9 @@
                 Personalised Plans
             </a>
             <div class="dropdown-menu border-0 orange" aria-labelledby="plans-link">
-                <a href="" class="dropdown-item orange">Meal Plans</a>
-                <a href="" class="dropdown-item orange">Exercise Plans</a>
-                <a href="" class="dropdown-item orange">All Plans</a>
+                <a href="{% url 'products' %}?category=meal_plans" class="dropdown-item orange">Meal Plans</a>
+                <a href="{% url 'products' %}?category=exercise_plans" class="dropdown-item orange">Exercise Plans</a>
+                <a href="{% url 'products' %}?category=meal_plans,exercise_plans" class="dropdown-item orange">All Plans</a>
             </div>
         </li>
 
@@ -27,9 +27,9 @@
                 Equipment
             </a>
             <div class="dropdown-menu border-0 orange" aria-labelledby="equipment-link">
-                <a href="" class="dropdown-item orange">Weights</a>
-                <a href="" class="dropdown-item orange">Accessories</a>
-                <a href="" class="dropdown-item orange">All Equipment</a>
+                <a href="{% url 'products' %}?category=weights" class="dropdown-item orange">Weights</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item orange">Accessories</a>
+                <a href="{% url 'products' %}?category=weights,accessories" class="dropdown-item orange">All Equipment</a>
             </div>
         </li>
 
@@ -38,9 +38,9 @@
                 Nutrition
             </a>
             <div class="dropdown-menu border-0 orange" aria-labelledby="nutrition-link">
-                <a href="" class="dropdown-item orange">Food &amp; Drink</a>
-                <a href="" class="dropdown-item orange">Suppliments</a>
-                <a href="" class="dropdown-item orange">All Nutrition</a>
+                <a href="{% url 'products' %}?category=food_and_drink" class="dropdown-item orange">Food and Drink</a>
+                <a href="{% url 'products' %}?category=suppliments" class="dropdown-item orange">Suppliments</a>
+                <a href="{% url 'products' %}?category=food_and_drink,suppliments" class="dropdown-item orange">All Nutrition</a>
             </div>
         </li>
 
