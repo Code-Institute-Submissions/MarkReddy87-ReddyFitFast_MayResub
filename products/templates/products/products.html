@@ -14,16 +14,43 @@
     <div class="overlay"></div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col text-center mt-2">
+            <div class="col text-center mt-3">
                 <h2 class="logo-font">Products</h2>
+                {% for c in current_categories %}
+                    <a class="text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 m-2 badge button-orange rounded-pill border-orange">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
             </div>
         </div>
         <div class="row">
-            <div class="col-10 offest-1">
-                <div class="row"></div>
+            <div class="container col-12 offest-1">
+                <div class="row mt-1 mb-2">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="w-50">
+                            <select id="sort-selector" class="rounded-pill orange border-orange">
+                                <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="mt-3 text-center text-md-left">
+                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                <span class="small"><a class="rounded-pill border-orange p-1 button-orange" href="{% url 'products' %}">Products Home</a></span>
+                            {% endif %}
+                            {{ products|length }} Products {% if search_term %} found for "{{ search_term }}"{% endif %}
+                        </p>
+                    </div>
+                </div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2">
                             <div class="card h-100 border-orange">
                                 {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
@@ -41,6 +68,13 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="mb-0 text-center logo-font">€{{ product.price }}</p>
+                                            {% if product.category %}
+                                            <p class="small mt-1 mb-0">
+                                                <a class="orange" href="{% url 'products' %}?category={{ product.category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                </a>
+                                            </p>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
