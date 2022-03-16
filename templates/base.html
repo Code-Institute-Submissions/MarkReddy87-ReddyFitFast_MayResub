@@ -70,13 +70,13 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="nav-link button-orange" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expandable="false">
+                        <a href="#" class="nav-link button-orange rounded-pill" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expandable="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg"></i></div>
                                 <p class="my-0">User Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0 orange" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-orange orange" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item orange">Manage Products</a>
@@ -90,8 +90,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-wieght-bold{% else %}text-black{% endif %} nav-link" href="">
-                            <div class="text-center button-orange">
+                        <a class="nav-link button-orange rounded-pill" href="">
+                            <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
                                 <p my-0>
                                     {% if grand_total %}

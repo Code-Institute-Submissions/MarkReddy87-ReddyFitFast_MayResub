@@ -67,6 +67,14 @@ body {
     z-index: -1;
 }
 
+.btn-top {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
