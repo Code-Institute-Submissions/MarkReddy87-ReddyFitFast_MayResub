@@ -75,6 +75,12 @@ body {
     right: 15px;
 }
 
+.btn-top,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
