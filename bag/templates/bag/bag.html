@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -45,7 +46,7 @@
                                         <p class="my-0">€{{ item.product.price }}</p>
                                     </td>
                                     <td class="py-4 w-25 orange">
-                                        <form class="form update-form" method="POST" action="">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group">
@@ -73,10 +74,10 @@
                                             </div>
                                         </form>
                                         <a class="update-link rounded-pill border-orange px-1"><small>Update</small></a>
-                                        <a class="remove-item rounded-pill border-orange px-1 float-right"><small>Delete</small></a>
+                                        <a class="remove-item rounded-pill border-orange px-1 float-right" id="remove_{{ item.item_id }}"><small>Delete</small></a>
                                     </td>
                                     <td class="py-4 orange">
-                                        <p class="my-0">€{{ item.product.price }}</p>
+                                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -134,8 +135,8 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${item_id}`;
-        var data  = {'csrfmddlewaretoken': csrfToken};
+        var url = `/bag/remove/${itemId}/`;
+        var data  = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function() {
