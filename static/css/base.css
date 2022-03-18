@@ -94,6 +94,12 @@ body {
     height: 4px;
 }
 
+.bag-note-wrapper {
+    height: 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
