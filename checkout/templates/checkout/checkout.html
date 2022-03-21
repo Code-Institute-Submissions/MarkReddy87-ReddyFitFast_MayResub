@@ -25,6 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-2">
+            <p>Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
                         <p class="mb-1 mt-0 small">Item</p>
@@ -38,9 +39,9 @@
                         <div class="col-2 mb-1">
                             <a href="{% url 'product_detail' item.product.id %}">
                                 {% if item.product.image %}
-                                    <img class="w-100" src="{{ item.product.imgage.url }}" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                                 {% else %}
-                                    <img class="w-100" src="{{ MEDIA_URL.no_image.png }}" alt="{{ product.name }}">
+                                    <img class="w-100" src="{{ MEDIA_URL }}no_image.png" alt="{{ product.name }}">
                                 {% endif %}
                             </a>
                         </div>
@@ -60,9 +61,9 @@
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">€{{ total | folatformat:2 }}</p>
+                        <p class="my-0">€{{ total | floatformat:2 }}</p>
                         <p class="my-0">€0.00</p>
-                        <p class="my-0"><strong>€{{ total | folatformat:2 }}</strong></p>
+                        <p class="my-0"><strong>€{{ total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>
@@ -72,18 +73,18 @@
                     {% csrf_token %}
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small orange px-2 w-auto">Details</legend>
-                        {{ order_form.full_name | as crispy_field }}
-                        {{ order_form.email | as crispy_field }}
+                        {{ order_form.full_name | as_crispy_field }}
+                        {{ order_form.email | as_crispy_field }}
                     </fieldset>
                     <fieldset class="rounded px-3 mb-5">
                         <legend class="fieldset-label small orange px-2 w-auto">Delivery</legend>
-                        {{ order_form.phone_number | as crispy_field }}
-                        {{ order_form.country | as crispy_field }}
-                        {{ order_form.postcode | as crispy_field }}
-                        {{ order_form.town_or_city | as crispy_field }}
-                        {{ order_form.street_address1 | as crispy_field }}
-                        {{ order_form.street_address2 | as crispy_field }}
-                        {{ order_form.county | as crispy_field }}
+                        {{ order_form.phone_number | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
+                        {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.town_or_city | as_crispy_field }}
+                        {{ order_form.street_address1 | as_crispy_field }}
+                        {{ order_form.street_address2 | as_crispy_field }}
+                        {{ order_form.county | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
                             {% if user.is_authenticated %}
                                 <label class="form-check-label" for="id-save-info">Save this delivery info to my profile</label>
@@ -115,14 +116,14 @@
                         <button id="submit-button" class="btn button-orange border-orange rounded-pill">
                             <span class="font-weight-bold">Complete Order</span>
                             <span class="icon">
-                                <i class="fas-fa-lock"></i>
+                                <i class="fas fa-lock"></i>
                             </span>
                         </button>
                         <p class="small text-danger my-0">
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
                             </span>
-                            <span>Your card will be charged <strong>€{{ total|folatformat:2 }}</strong></span>
+                            <span>Your card will be charged <strong>€{{ total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
                 </form>
