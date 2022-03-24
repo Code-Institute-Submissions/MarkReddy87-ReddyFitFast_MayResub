@@ -12,7 +12,7 @@
                 {{ message }}
             </div>
         </div>
-        {% if total %}
+        {% if total and not on_profile_page %}
             <p class="orange logo-font py-1">Your bag ({{ product_count }})</p>
             <div class="bag-note-wrapper">
                 {% for item in bag_items %}

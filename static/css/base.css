@@ -115,8 +115,19 @@ input[name='q']::placeholder {
 
 /* Allauth Form Formatting */
 
-.allauth-form-inner-content label:not([for='id_remember']) {
+.allauth-inner-content label:not([for='id_remember']) {
     display: none;
+}
+
+.allauth-inner-content input {
+    border: 1px solid #FA8620;
+    background: #000;
+    color: #FA8620;
+    border-radius: 20px;
+}
+
+.allauth-inner-content input::placeholder {
+    color: #FA8620;
 }
 
 /* fixed top navbar only on medium and up */
