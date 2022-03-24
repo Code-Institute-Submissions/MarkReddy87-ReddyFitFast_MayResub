@@ -46,6 +46,15 @@
     z-index: 9999;
 }
 
+select,
+select option {
+    color: #FA8620;
+}
+
+select:invalid {
+    color: #FA8620; !important
+}
+
 .loading-spinner {
     display: flex;
     align-items: center;
