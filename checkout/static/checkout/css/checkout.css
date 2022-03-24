@@ -52,7 +52,7 @@ select option {
 }
 
 select:invalid {
-    color: #FA8620; !important
+    color: #FA8620 !important;
 }
 
 .loading-spinner {
