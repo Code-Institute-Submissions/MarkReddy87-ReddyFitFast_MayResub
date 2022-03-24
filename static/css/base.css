@@ -81,6 +81,10 @@ body {
     cursor: pointer;
 }
 
+input[name='q']::placeholder {
+    color: #FA8620;
+}
+
 /* -------------------------------- Toasts */
 
 .message-container {
@@ -108,6 +112,10 @@ body {
     max-width: 80%;
   }
 }
+
+/* Allauth Form Formatting */
+
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
