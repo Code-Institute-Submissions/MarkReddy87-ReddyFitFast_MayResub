@@ -168,13 +168,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-lg-7 text-right pt-2">
-                <a href="{% url 'products' %}" class="btn button-orange border-orange rounded-pill my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-shopping-bag"></i>
-                    </span>
-                    <span class="text-uppercase">Find more products!</span>
-                </a>
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn button-orange border-orange rounded-pill my-2">
+                        <span class="icon mr-2">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}" class="btn button-orange border-orange rounded-pill my-2">
+                        <span class="icon mr-2">
+                            <i class="fas fa-shopping-bag"></i>
+                        </span>
+                        <span class="text-uppercase">Find more products!</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
