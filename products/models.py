@@ -14,7 +14,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-    def get_firendly_name(self):
+    def get_friendly_name(self):
         """ return product friendly name """
         return self.friendly_name
 
