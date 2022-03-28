@@ -32,7 +32,7 @@
             {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item orange">Manage Products</a>
             {% endif %}
-            <a href="" class="dropdown-item orange">My Profile</a>
+            <a href="{% url 'profile' %}" class="dropdown-item orange">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item orange">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item orange">Make an Account</a>
@@ -41,12 +41,12 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class=" nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
-        <div class="text-center button-orange">
+    <a class="nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
+        <div class="text-center orange">
             <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-            <p my-0>
-                {% if grand_total %}
-                    €{{ grand_total|floatformat:2}}
+            <p class="my-0">
+                {% if total %}
+                    €{{ total|floatformat:2}}
                 {% else %}
                     €0.00
                 {% endif %}
