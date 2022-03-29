@@ -7,6 +7,7 @@ import django_countries.fields
 
 
 class Migration(migrations.Migration):
+    """ Migration Class """
 
     initial = True
 

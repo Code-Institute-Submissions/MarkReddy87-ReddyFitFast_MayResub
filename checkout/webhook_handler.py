@@ -32,7 +32,7 @@ class StripeWebhookHandler:
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )  
+        )
 
     def handle_event(self, event):
         """
@@ -122,13 +122,13 @@ class StripeWebhookHandler:
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(bag).items():
-                        product = Product.objects.get(id=item_id)
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            product=product,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
+                    product = Product.objects.get(id=item_id)
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
             except Exception as error:
                 if order:
                     order.delete()
