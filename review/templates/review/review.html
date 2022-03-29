@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-5 mt-4">Post a Review</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <p>Please fill out the form below to post a review to our site!</p>
+                <form action="{% url 'review' %}" method="POST" id="review-form">
+                    {% csrf_token %}
+                    {{ review_form|crispy }}
+                    <button class="btn button-orange border-orange rounded-pill" id="submit-button" type="submit">
+                        <span class="font-weight-bold">Submit Review</span>
+                        <span class="icon">
+                            <i class="fas fa-paper-plane"></i>
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

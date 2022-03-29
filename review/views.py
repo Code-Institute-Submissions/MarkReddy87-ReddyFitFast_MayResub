@@ -11,4 +11,4 @@ def review(request):
         'review_form': review_form,
     }
 
-    return redirect(request, template, context)
+    return render(request, template, context)
