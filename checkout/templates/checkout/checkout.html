@@ -91,8 +91,8 @@
                                 <input class="form-check-input" type="checkbox" id="id-save-info" name="save-info" checked>
                             {% else %}
                             <label class="form-check-label" for="id-save-info">
-                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this info
+                                <a class="btn button-orange border-orange rounded-pill" href="{% url 'account_signup' %}">Create an account</a> or
+                                <a class="btn button-orange border-orange rounded-pill" href="{% url 'account_login' %}">login</a> to save this info
                             </label>
                             {% endif %}
                         </div>
