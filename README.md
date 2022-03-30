@@ -35,8 +35,7 @@ The full list of user stories undertaken in this project are detailed below:
 15. As a shopper I want to be able to view my order confirmation after checkout so that I can ensure no mistakes were made
 16. As a site user I want to be able to easily recover my password so that I can regain access to my profile
 17. As a site owner I want to be able to add a product or service so that I can update the site with new items when needed
-18. 
-As a site owner I want to be able to edit / update a product or service so that I can make changes to the price, description or image
+18. As a site owner I want to be able to edit / update a product or service so that I can make changes to the price, description or image
 19. As a site owner I want to be able to delete an item from the site so that I can remove products that are no longer for sale
 20. As a shopper I want to feel my personal and payment info is safe so that I can confidently provide the necessary info to make a purchase
 21. As a site user I want to be able to easily register for an account so that I can save my personal info and fully access the sites capabilities
