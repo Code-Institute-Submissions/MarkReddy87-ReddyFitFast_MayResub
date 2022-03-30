@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://reddy-fit-fast.herokuapp.com/sitemap.xml
