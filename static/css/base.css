@@ -206,3 +206,11 @@ input[name='q']::placeholder {
         font-size: .9rem;
     }
 }
+
+/* Mailchimp CSS */
+
+#mc_embed_signup {
+    background: #000;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+}

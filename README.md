@@ -54,55 +54,57 @@ The Django framework allows developers to include such a wide variety of feature
 
 The fully responsive navigation bar is consistant across the entire site and allows the user to access any part of the site without the need to use the browser back button or traversing multiple pages to reach a destination. The top of the navigation bar includes the site logo in the top left corner which acts as a home button, beside that in the center there is a search bar where a user can search for any item that may be on the site, to the left or the search bar there is a drop down user profile button allowing access to all account features and in the top right corner there a shopping basket link which also shows a running total of the cost of the basket contents and gives a pop up of the bag contents when an item is added to it. Below all this there are five different link to different parts of the site mostly related to product categories and one for the review page. 
 
-![Navigation bar screenshot](media/screenshots/navbar_ss.PNG)
+![Navigation bar screenshot](media/project_screenshots/navbar_ss.PNG)
 
 2. The landing page
 
 The home page of the site is a simple but striking one. It includes a strong image of a powerlifter accompanied with inspirational quote designed to envoke a positive reaction. Across the image is a banner letting the customer know that there is no delivery charge for all purchases which may give the user that extra push to make a purchase. Below the quote is a responsive button urging the user to get shopping. Clicking this will bring the user to page containing all the site products and services. 
 
-![home page screenshot](media/screenshots/homepage_ss.PNG)
+![home page screenshot](media/project_screenshots/homepage_ss.PNG)
 
 3. Products page
 
 The products page shows a list of all available products and service contained within bootstrpa cards giving a product image, a product title, the cost of the product and which category the product belongs too. Above the product cards to the left shows a count of the products on page which will update when categories are refined or a search is made. To the right of this is a dropdown menu which allows the customer to sort the products currently on the page by price, by name or by category both ascending or descending. The customer can click the product image which brings them to the product detail page showing further information about the product and giving the ability to add the item to the basket.
 
-![Products page screenshot](media/screenshots/products_ss.PNG)
+![Products page screenshot](media/project_screenshots/products_ss.PNG)
 
 4. Shopping Bag Page 
 
 The shopping bag page shows the user a list of all products currently in their basket if there is any and allows them to update the amount of a particular item or delete it alltogether. Below the list of items is the grand total of the order and two buttons which will either bring the user to the checkout page or back to shopping products.
 
-![Shopping bag screenshot](media/screenshots/shopping_bag_ss.PNG)
+![Shopping bag screenshot](media/project_screenshots/shopping_bag_ss.PNG)
 
 5. The Checkout Page
 
 The checkout page consists of a form on the left side where the user is prompted to fill it out to complete their order. The form includes fields for the customers name, address and card details. Also here the customer can login or create an account allowing them to check a box and save their billing details to their profile so the form is pre filled for their next order. The right side of the page shows the customers final order summary and order grand total.
 
-![Checkout page screenshot 1](media/screenshots/checkout_ss_1.PNG)
+![Checkout page screenshot 1](media/project_screenshots/checkout_ss_1.PNG)
 
-![Checkout page screenshot 2](media/screenshots/checkout_ss_2.PNG)
+![Checkout page screenshot 2](media/project_screenshots/checkout_ss_2.PNG)
 
 6. My Profile Page 
 
 The left side of the profile page shows a form prefilled with the users billing info which can be changed and updated whenever the customer needs too. The right side of the page contains a list of the users previous orders and the provided shortened order number can be clicked to bring up the fll details of those orders.
 
-![Profile page screenshot](media/screenshots/my_profile_ss.PNG)
+![Profile page screenshot](media/project_screenshots/my_profile_ss.PNG)
 
 7. Review page 
 
 The review page shows a form which any site user can fill out and submit a review to the site which when approved by the site admin will appear under for in a bootstrap card alongside previous approved reviews from other site users.
 
-![Review form screenshot](media/screenshots/review_ss.PNG)
+![Review form screenshot](media/project_screenshots/review_ss.PNG)
 
 8. Newsletter Signup
 
-newsletter screenshot
+For the newsletter signup function I chose to use the Mailchimp service which was very easy to use and implement in my sites code. I place the form below the footer in base.html so that it would appear across all pages but would also not take away for the rest of the sites look as you have to scroll down too access it.
+
+![Mailchimp newsletter signup screenshot](media/project_screenshots/newsletter_signup_ss.PNG)
 
 9. Footer 
 
 The footer for the site which is consistant across all pages contains multiple fully responsive social media icon links which will bring the customer to the facebook business page as well as other popular social media sites and also a link to the repository for the site itself.
 
-![Footer screenshot](media/screenshots/footer_ss.PNG)
+![Footer screenshot](media/project_screenshots/footer_ss.PNG)
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
