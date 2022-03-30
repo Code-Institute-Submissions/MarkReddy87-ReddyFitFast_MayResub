@@ -136,9 +136,23 @@ I found using Balsamiq wireframes very beneficial. This is a great tool to use d
 
 
 ## 8. Testing
+
+An abumdance of manual testing was done throughout the development of this project. Before every workspace commit I try would ensure the functionality I was trying to implement was working how I wanted it too by starting the development server and try out that specific function. If there was an issue I would note it in my commit message and come back to it at a later date. This way I was able to keep errors to a minimum. After deploying my project to Heroku I manually retested all the main functionalities to ensure nothing had gone wrong during the process. Naturally there were some issues some of which I will outline in a section below.
+
 ### 8.1 code validation
+
+   * HTML - All HTML files were passed through the official [W£C Validator](https://validator.w3.org/#validate_by_input) - I was left with only one fatal error coming from bag.html. The error was cause by a Django Template inheritance for loop and I couldn't find a way around this one without breaking the code. All other no fatal error's seem to be related to Django Template inheritance syntax and seem to be unavoidable.
+   * CSS - No errors were returned after all CSS files were passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
 ### 8.2 fixed bugs
+
+A lot of small bugs cropped up during the development process mainly consisting of indentation errors, spelling mistakes and various misplaced brackets. Most of these were easily identified thanks to the DEBUG function within my Github workspace but others needed a little more head scratching.
+
+One strange bug that sticks out for me was with Amazon Web Services (AWS) - It is my first time using this service to store the static files for a project and after I had set up my S3 bucket, added the group / user / policy and entered all the credentials in setting.py my static files still would not load into AWS and my Heroku app kept failing to load the static files during the build process. After combing through the code for hours I had to turn to tutor support where we eventually figured out it was an issue with the Access key ID and Secret access key. After regenerating both of these numerous times and eventually getting one without any /'s in it the Heroku build finally succeeded and the static folder was created in the bucket. This lesson I wouldn't soon forget!
+
 ### 8.3 supported screens and browsers
+
+
 
 ## 9. Deployment
 ### 9.1 via gitpop

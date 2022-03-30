@@ -63,6 +63,6 @@ def remove_from_bag(request, item_id):
         request.session['bag'] = bag
         return HttpResponse(status=200)
 
-    except Exception as e:
-        messages.error(request, f'Error removing item: {e}')
+    except Exception as error:
+        messages.error(request, f'Error removing item: {error}')
         return HttpResponse(status=500)

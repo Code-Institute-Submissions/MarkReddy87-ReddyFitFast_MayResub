@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 <div class="toast border-orange" data-autohide="false">
     <div class="toast-cap w-100 bg-success"></div>
     <div class="toast-header orange">
@@ -33,9 +35,9 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <strong><p class="orange mt-3 mb-1">
+                    <p class="orange mt-3 mb-1"><strong></strong>
                         Total: <span class="float-right">€{{ total|floatformat:2 }}</span>
-                    </p></strong>
+                    </strong></p>
                     <a href="{% url 'view_bag' %}" class="btn button-orange border-orange rounded-pill">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">

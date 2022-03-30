@@ -1,12 +1,9 @@
-{% load static %}
-
 <!doctype html>
 <html lang="en">
+    {% load static %}
 
 <head>
-
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
@@ -43,7 +40,7 @@
     {% block extra_js %}
     {% endblock %}
 
-    <title>Reddy<strong>Fit</strong>Fast {% block extra_title %}{% endblock %}</title>
+    <title>ReddyFitFast</title>
 </head>
 
 <body>
@@ -71,7 +68,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="nav-link button-orange rounded-pill" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expandable="false">
+                        <a href="#" class="nav-link button-orange rounded-pill" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg"></i></div>
                                 <p class="my-0">User Account</p>
@@ -94,7 +91,7 @@
                         <a class="nav-link button-orange rounded-pill" href="{% url 'view_bag' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-lg"></i></div>
-                                <p my-0>
+                                <p class="my-0">
                                     {% if total %}
                                         €{{total|floatformat:2}}
                                     {% else %}
@@ -109,7 +106,7 @@
         </div>
         <div class="row">
             <nav class="navbar navbar-expand-lg w-100">
-                <button class="navbar-toggler border-orange button-orange" type="button" data-toggle="collapse" data-target="#main-nav" aria-expandable="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-orange button-orange" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/mobile-top-header.html' %}

@@ -1,3 +1,5 @@
+<!doctype html>
+<html lang="en">
 {% extends "base.html" %}
 {% load static %}
 
@@ -76,13 +78,13 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <a class="button-orange border-orange rounded-pill mt-4" href="{% url 'products' %}">
+                                <a class="btn button-orange border-orange rounded-pill mt-4" href="{% url 'products' %}">
                                     <span class="icon">
                                         <i class="fas fa-arrow-left"></i>
                                     </span>
                                     <span class="text-uppercase p-1">Back to Shopping</span>
                                 </a>
-                                <input class="button-orange border-orange rounded-pill mt04 text-uppercase ml-2" type="submit" value="Add to Bag">
+                                <input class="btn button-orange border-orange rounded-pill mt-4 text-uppercase ml-2" type="submit" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
