@@ -11,7 +11,6 @@ class Review(models.Model):
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE,
                                   related_name="review_from")
     created_on = models.DateTimeField(auto_now_add=True)
-    approved = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.slug:

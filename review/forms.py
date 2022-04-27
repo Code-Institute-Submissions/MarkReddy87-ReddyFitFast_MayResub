@@ -7,7 +7,7 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         """ Fields to be shown in form """
         model = Review
-        fields = ('title', 'body', 'posted_by',)
+        fields = ('title', 'body',)
 
     def __init__(self, *args, **kwargs):
         """
@@ -18,7 +18,6 @@ class ReviewForm(forms.ModelForm):
         placeholders = {
             'title': 'Review Title',
             'body': 'Review Body',
-            'posted_by': 'Reviewed By...'
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True

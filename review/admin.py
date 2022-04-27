@@ -4,16 +4,12 @@ from .models import Review
 
 class ReviewAdmin(admin.ModelAdmin):
     """ Review Admin setup """
-    fields = ('title', 'body', 'image', 'posted_by',
-              'created_on', 'approved',)
 
-    list_filter = ('approved', 'created_on')
+    prepopulated_fields = {'slug': ('title',)}
 
-    ordering = ('-created_on')
-
-    def approved_review(self, request, queryset):
-        """ approved function """
-        queryset.update(approved=True)
+    list_display = ('title', 'slug', 'created_on',)
+    search_fields = ['title', 'body']
+    list_filter = ('created_on',)
 
 
-admin.site.register(Review)
+admin.site.register(Review, ReviewAdmin)
