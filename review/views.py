@@ -25,3 +25,15 @@ def add_review(request):
     }
 
     return render(request, template, context)
+
+
+def review_detail(request, slug):
+    """ A view to show individual review details """
+
+    review = get_object_or_404(Review, slug=slug)
+
+    context = {
+        'review': review,
+    }
+
+    return render(request, 'review/review_detail.html', context)

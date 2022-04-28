@@ -23,7 +23,7 @@
                 <div class="row">
                     {% for review in reviews %}
                     <div class="col-md-4">
-                        <a href="#" class="text-decoration-none">
+                        <a href="{% url 'review_detail' review.slug %}" class="text-decoration-none">
                             <div class="card-mb-4 border-orange rounded mb-3">
                                 <div class="card-body">
                                     <div>

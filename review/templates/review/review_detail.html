@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="card-m-4">
+                    <div class="card-body">
+                        <div>
+                            <img class="card-image-top img-fluid rounded" alt="review image"
+                            src="https://images.pexels.com/photos/4065400/pexels-photo-4065400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                            <div><p class="author">Author: {{ review.posted_by }}</p></div>
+                        </div>
+                        <h2 class="card-title">{{ review.title }}</h2>
+                        <p class="card-text">{{ review.body }}</p>
+                        <hr />
+                        <p class="card-text text-muted h6">{{ review.created_on }}</p>
+                    </div>
+                    {% if user.is_authenticated and user == review.posted_by %}
+                    <div class="card-footer">
+                        <a class="btn button-orange border-orange rounded-pill ml-2" href="#">Edit Review</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-2" href="#">Delete Review</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-2" href="{% url 'review' %}">Back to Review's</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-2" href="{% url 'add_review' %}">Write new Review</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-2 mt-2" href="{% url 'products' %}">Back to Shopping</a>
+                    </div>
+                    {% else %}
+                    <div class="card-footer">
+                        <a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'review' %}">Back to Review's</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'add_review' %}">Write a Review</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'products' %}">Back to Shopping</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
