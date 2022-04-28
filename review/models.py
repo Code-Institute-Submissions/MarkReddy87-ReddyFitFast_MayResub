@@ -12,10 +12,16 @@ class Review(models.Model):
                                   related_name="review_from")
     created_on = models.DateTimeField(auto_now_add=True)
 
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.title)
-        return super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     if not self.slug:
+    #         self.slug = slugify(self.title)
+    #     return super().save(*args, **kwargs)
+
+    # def auto_slug(self):
+    #     """ auto slugify title """
+    #     if not self.slug:
+    #         self.slug = slugify(self.title)
+    #     return super().save()
 
     class Meta:
         """ Setting ordering """

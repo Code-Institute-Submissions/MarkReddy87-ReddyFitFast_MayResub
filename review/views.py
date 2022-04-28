@@ -18,10 +18,20 @@ def review_list(request):
 
 def add_review(request):
     """ review view """
-    review_form = ReviewForm()
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save()
+            messages.success(request, 'Successfully added review!')
+            return redirect(reverse('review_detail', args=[review.slug]))
+        else:
+            messages.error(request, 'Failed to add review. Please ensure the form is valid.')
+    else:
+        form = ReviewForm()
+
     template = 'review/add_review.html'
     context = {
-        'review_form': review_form,
+        'form': form,
     }
 
     return render(request, template, context)
