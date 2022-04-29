@@ -21,9 +21,9 @@ def add_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            review = form.save()
+            form.save()
             messages.success(request, 'Successfully added review!')
-            return redirect(reverse('review_detail', args=[review.slug]))
+            return redirect(reverse('review'))
         else:
             messages.error(request, 'Failed to add review. Please ensure the form is valid.')
     else:
@@ -37,10 +37,10 @@ def add_review(request):
     return render(request, template, context)
 
 
-def review_detail(request, slug):
+def review_detail(request, review_id):
     """ A view to show individual review details """
 
-    review = get_object_or_404(Review, slug=slug)
+    review = get_object_or_404(Review, pk=review_id)
 
     context = {
         'review': review,

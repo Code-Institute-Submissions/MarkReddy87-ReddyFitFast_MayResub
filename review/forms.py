@@ -7,7 +7,7 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         """ Fields to be shown in form """
         model = Review
-        fields = ('title', 'body',)
+        fields = ('title', 'body')
 
     def __init__(self, *args, **kwargs):
         """
