@@ -13,21 +13,6 @@ class Review(models.Model):
     def __str__(self):
         return self.title
 
-    # def save(self, *args, **kwargs):
-    #     self.slug = self.slug or slugify(self.title)
-    #     super().save(*args, **kwargs)
-
-    # def save(self, *args, **kwargs):
-    #     if not self.slug:
-    #         self.slug = slugify(self.title)
-    #     return super().save(*args, **kwargs)
-
-    # def auto_slug(self):
-    #     """ auto slugify title """
-    #     if not self.slug:
-    #         self.slug = slugify(self.title)
-    #     return super().save()
-
     class Meta:
         """ Setting ordering """
         ordering = ['-created_on']
