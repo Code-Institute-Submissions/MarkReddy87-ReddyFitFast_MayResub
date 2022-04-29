@@ -24,13 +24,23 @@
                     {% for review in reviews %}
                     <div class="col-md-4">
                         <a href="{% url 'review_detail' review.id %}" class="text-decoration-none">
-                            <div class="card-mb-4 border-orange rounded mb-3">
+                            <div class="card-mb-4 border-orange rounded mb-3 button-orange">
                                 <div class="card-body">
                                     <div>
                                         <img class="card-image-top img-fluid rounded" alt="placeholder image"
                                         src="https://images.pexels.com/photos/4065400/pexels-photo-4065400.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
                                         <div class="image-flash">
-                                            <p class="orange">Author: {{ review.posted_by }}</p>
+                                            <p class="orange">
+                                                <span class="orange">Author: {{ review.posted_by }}</span>
+                                                <span>
+                                                    {% if user.is_authenticated and user == review.posted_by %}
+                                                    <small class="ml-3">
+                                                        <a class="orange" href="{% url 'edit_review' review.id %}">Edit</a> | 
+                                                        <a class="text-danger" href="{% url 'delete_review' review.id %}">Delete</a>
+                                                    </small>
+                                                    {% endif %}
+                                                </span>
+                                            </p> 
                                         </div>
                                     </div>
                                     <h2 class="orange">{{ review.title }}</h2>
