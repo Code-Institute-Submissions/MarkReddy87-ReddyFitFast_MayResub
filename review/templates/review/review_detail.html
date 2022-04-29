@@ -32,7 +32,7 @@
                     {% if user.is_authenticated and user == review.posted_by %}
                     <div class="card-footer">
                         <a class="btn button-orange border-orange rounded-pill ml-2" href="{% url 'edit_review' review.id %}">Edit Review</a>
-                        <a class="btn button-orange border-orange rounded-pill ml-2" href="#">Delete Review</a>
+                        <a class="btn button-orange border-orange rounded-pill ml-2 text-danger" href="{% url 'delete_review' review.id %}">Delete Review</a>
                         <a class="btn button-orange border-orange rounded-pill ml-2" href="{% url 'review' %}">Back to Review's</a>
                         <a class="btn button-orange border-orange rounded-pill ml-2" href="{% url 'add_review' %}">Write new Review</a>
                         <a class="btn button-orange border-orange rounded-pill ml-2 mt-2" href="{% url 'products' %}">Back to Shopping</a>
