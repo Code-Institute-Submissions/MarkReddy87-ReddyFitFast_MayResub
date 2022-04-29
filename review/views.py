@@ -21,7 +21,10 @@ def add_review(request):
     if request.method == 'POST':
         form = ReviewForm(request.POST)
         if form.is_valid():
-            form.save()
+            review = form.save(commit=False)
+            user = request.user
+            review.posted_by = user
+            review.save()
             messages.success(request, 'Successfully added review!')
             return redirect(reverse('review'))
         else:
