@@ -43,6 +43,17 @@ The full list of user stories undertaken in this project are detailed below:
 23. As a site user I want to be able to leave a review of a product or service so that I can let other site users know how good or bad my experience with the site was and share my success story
 24. As a site owner I want to employ a good SEO strategy so that users can easily find my site when searching online
 
+After reviewing feed back from the my project assessor I drafted a number of new user stories to be implemented as the site was lacking some functionality. I also took advantage the tagging feature which I found to be effective. Below is the list of the new user stories:
+
+25. As a site user I want to be able to leave a review of a product or service so that I can let other site users know how good or bad my experience with the site was and share my success story.
+26. As a site I want to be able to edit my posted review so that I can fix any possible mistakes and edit any part of my review.
+27. As a site user I want to be able to delete my review so that I can remove the contect from the site if i wish to do so.
+28. As a site user I want to receive a confirmation email when I make an order so that I can ensure my order has been processed and paid for.
+29. As a site owner I want to create a data scema diagram for the site so that I can visualy showcase the database of the site and how each part interacts with each other.
+30. As a site owner I want to give more detail on the purpose of the project as well as its intent so that I can show others the core business / marketing strategies and who is my target audience.
+31. As a site owner I want to ensure all the code within my site is pep8 adherent so that I can comply with industry standards and only have clean code within my project.
+32. As a site owner I want to complete extensive manual testing and a detailed step by step process of how it was done so that I can show other developers the exacts step takeen / expected when testing the site.
+
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
 
@@ -126,7 +137,7 @@ For the main font I chose "Poppins" from the Google Fonts collection, I thought 
 
 ## 6. Wireframes
 
-[Link to Project Wireframes](https://balsamiq.cloud/s1wvfc3/php43ry/r9007).
+[Link to Project Wireframes](https://balsamiq.cloud/s1wvfc3/php43ry/rCF52).
 
 I found using Balsamiq wireframes very beneficial. This is a great tool to use during the project inception. It allows the user to plan out every page you want to create with great detail and with the variety elements to choose from I feel it can inspire you to come up with new ideas. After creating my wireframes I found myself using them as a constant reference during the coding process.
 
