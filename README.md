@@ -53,6 +53,9 @@ After reviewing feed back from the my project assessor I drafted a number of new
 30. As a site owner I want to give more detail on the purpose of the project as well as its intent so that I can show others the core business / marketing strategies and who is my target audience.
 31. As a site owner I want to ensure all the code within my site is pep8 adherent so that I can comply with industry standards and only have clean code within my project.
 32. As a site owner I want to complete extensive manual testing and a detailed step by step process of how it was done so that I can show other developers the exacts step takeen / expected when testing the site.
+33. As a site user I want to be able to save products to a wishlist so that I can review them further at a later date and decide wheather or not to add them to my basket
+34. As a site owner I want to create custom error pages so that I can encourage site user to stay on my site even if something goeas wrong or there is an error
+35. As a site owner I want to Dissallow some paths in my robots.txt file so that I can prevent bots from accessing pages that might contain sensitive user information
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
