@@ -12,16 +12,28 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-50 w-50">
-        <div class="row h-50 w-50">
-            <div class="card border-orange mt-4">
-                <img class="card-img-top" src="https://www.elegantthemes.com/blog/wp-content/uploads/2020/08/000-http-error-codes.png" alt="Error Image">
-                <div class="card-body">
-                    <h5 class="card-text">Oops! Something went wrong, this page does not exist!!!</h5>
-                    <a href="{% url 'home' %}" class="btn button-orange border-orange rounded-pill">500 Error! Return home??</a>
+    <div class="overlay"></div>
+    <h2 class="logo-font mb-3 mt-4 ml-3">500 Error! Oops! Something went wrong, this page does not exist!!!</h2>
+    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'home' %}">Go Home?</a></span>
+    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'products' %}">Back to Shopping?</a></span>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <a href="{% url 'home' %}" class="text-decoration-none">
+                            <div class="card-mb-8 border-orange rounded mb-3">
+                                <div class="card-body">
+                                    <div>
+                                        <img class="card-image img-fluid" alt="Error Image"
+                                        src="https://www.elegantthemes.com/blog/wp-content/uploads/2020/08/000-http-error-codes.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
-
