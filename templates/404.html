@@ -1,12 +1,23 @@
 <!doctype html>
 <html lang="en">
+{% extends "base.html" %}
 {% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <title>ReddyFitFast</title>
-</head>
-<body>
-    <a href="{% url 'home' %}" class="btn button-orange">404</a>
-</body>
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="mt-4">
+                <p>Looks like you are lost because this page does not exist!!!</p>
+                <a href="{% url 'home' %}" class="btn button-orange border-orange">404 Error! Return home??</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
