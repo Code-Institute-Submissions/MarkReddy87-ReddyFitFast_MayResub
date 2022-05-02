@@ -1,3 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: checkout
+Disallow: profiles
+Disallow: templates/allauth
 Sitemap: https://reddy-fit-fast.herokuapp.com/sitemap.xml
