@@ -28,5 +28,4 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('review/', include('review.urls')),
     # path('wishlist/', include('whishlist.urls')),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
