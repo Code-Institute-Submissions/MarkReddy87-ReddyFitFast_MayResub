@@ -85,6 +85,14 @@
                                     <span class="text-uppercase p-1">Back to Shopping</span>
                                 </a>
                                 <input class="btn button-orange border-orange rounded-pill mt-4 text-uppercase ml-2" type="submit" value="Add to Bag">
+                                {% if request.user.is_authenticated %}
+                                    <a class="btn button-orange border-orange rounded-pill mt-4" href="#">
+                                        <span class="icon">
+                                            <i class="fas fa-magic"></i>
+                                        </span> 
+                                        <span class="text-uppercase">Add to wishlist</span>
+                                    </a>
+                                {% endif %}
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

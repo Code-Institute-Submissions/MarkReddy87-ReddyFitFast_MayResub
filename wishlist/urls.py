@@ -3,5 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.show_wishlist, name='wishlist'),
+    path('', views.wishlist, name='wishlist'),
 ]

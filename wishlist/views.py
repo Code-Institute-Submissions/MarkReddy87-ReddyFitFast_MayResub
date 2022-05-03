@@ -18,16 +18,16 @@ from products.models import Product
 #     return render(request, template, context)
 
 @login_required
-def show_wishlist(request):
+def wishlist(request):
     """ view to show wishlist """
-    wish_items = None
+    wishlist = None
     try:
-        wish_items = WishList.objects.get(user=request.user)
+        wishlist = WishList.objects.get(user=request.user)
     except WishList.DoesNotExist:
         pass
 
     context = {
-        'wish_items': wish_items,
+        'wishlist': wishlist,
     }
 
-    return render(request, 'whishlist/wishlist.html', context)
+    return render(request, 'wishlist/wishlist.html', context)
