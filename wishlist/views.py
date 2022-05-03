@@ -1,33 +1,34 @@
 """ relevant imports below """
-from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import WishList
 from products.models import Product
+from .models import WishList
 
-
-# @login_required
-# def show_wishlist(request):
-#     """ view to show wishlist """
-#     wish_items = WishList.objects.all()
-#     template = 'whishlist/wishlist.html'
-#     context = {
-#         'wished_items': wish_items,
-#     }
-
-#     return render(request, template, context)
 
 @login_required
 def wishlist(request):
     """ view to show wishlist """
     wishlist = None
-    try:
-        wishlist = WishList.objects.get(user=request.user)
-    except WishList.DoesNotExist:
-        pass
-
+    wishlist = WishList.objects.filter(user=request.user)
     context = {
         'wishlist': wishlist,
     }
 
     return render(request, 'wishlist/wishlist.html', context)
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    """ Add to wishlist view """
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, _ = WishList.objects.get_or_create(user=request.user)
+    if wishlist.wished_items.filter(id=request.user.id).exists():
+        wishlist.wished_items.remove(product)
+        messages.success(request,
+                         'Product successfully removed from wishlist!')
+    else:
+        wishlist.wished_items.add(product)
+        messages.success(request, 'Successfully added product to wishlist!')
+    return HttpResponseRedirect(request.META["HTTP_REFERER"])
