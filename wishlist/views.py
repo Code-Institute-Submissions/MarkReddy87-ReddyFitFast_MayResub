@@ -10,10 +10,10 @@ from .models import WishList
 @login_required
 def wishlist(request):
     """ view to show wishlist """
-    wishlist = None
-    wishlist = WishList.objects.filter(user=request.user)
+    products = None
+    products = WishList.objects.filter(user=request.user)
     context = {
-        'wishlist': wishlist,
+        'products': products,
     }
 
     return render(request, 'wishlist/wishlist.html', context)
@@ -21,14 +21,17 @@ def wishlist(request):
 
 @login_required
 def add_to_wishlist(request, product_id):
-    """ Add to wishlist view """
+    """
+    A view to create wishlist if the user does not have one.
+    This will also add and remove the product from the wishlist.
+    """
     product = get_object_or_404(Product, id=product_id)
-    wishlist, _ = WishList.objects.get_or_create(user=request.user)
-    if wishlist.wished_items.filter(id=request.user.id).exists():
-        wishlist.wished_items.remove(product)
+    user_wishlist, _ = WishList.objects.get_or_create(user=request.user)
+    if user_wishlist.wished_items.filter(id=request.user.id).exists():
+        user_wishlist.wished_items.remove(product)
         messages.success(request,
                          'Product successfully removed from wishlist!')
     else:
-        wishlist.wished_items.add(product)
+        user_wishlist.wished_items.add(product)
         messages.success(request, 'Successfully added product to wishlist!')
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
