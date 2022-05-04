@@ -191,45 +191,52 @@ I found using Balsamiq wireframes very beneficial. This is a great tool to use d
 
 ## 8. Testing
 
-An abumdance of manual testing was done throughout the development of this project. Before every workspace commit I try would ensure the functionality I was trying to implement was working how I wanted it too by starting the development server and try out that specific function. If there was an issue I would note it in my commit message and come back to it at a later date. This way I was able to keep errors to a minimum. After deploying my project to Heroku I manually retested all the main functionalities to ensure nothing had gone wrong during the process. Naturally there were some issues some of which I will outline in a section below.
+An abumdance of manual testing was done throughout the development of this project. Before every workspace commit I try would ensure the functionality I was trying to implement was working how I wanted it too by starting the development server and try out that specific function. If there was an issue I would note it in my commit message and come back to it at a later date. This way I was able to keep errors to a minimum. After deploying my project to Heroku I manually re-tested all the main functionalities to ensure nothing had gone wrong during the process. I will outline all these steps below.
 
+### 8.1 Manual Testing
 
-   ### 8.1 code validation
+1. Link Check / Spell Check
 
-   * HTML - No fatal erros were returned when HTML code was passed through the official [W3C Validator](https://validator.w3.org/)
+After after completing an initial spell check on all pages espically on the product description I then checked that all links in the footer of the page worked correctly by clicking them all to see if they all opened in a new tab and navigated to the correct page which they did. I also checked the privacy policy button which also correctly brought the user to the sites custom policy page. At this point I began to checked all the navigation links on the landing page, including the home button, user account button, shopping basket button, wishlist button, review's button, all the product dropdown links and the get shopping button. They all worked as expected either bringing me to the correct page or showing the correct dropdown menu.
 
-   Once the project was fully deployed to Heroku I chose to validate the HTML files by entering the URL's into the site. Upon navigating to the W3C validator site I copied the deployed Heroku URL and pasted it into the address bar and clicked the check button. I repeated this process for all the URL's within the deployed app and addressed all the errors that came up one by one if there was any. Once I thought all the errors were addressed I redeployed the site to Heroku after a git commit and push in the GitPod workspace then I ran all the URL's through the validator one more time to ensure I had fixed everything.
+2. 
 
-   * CSS - No errors were returned when the CSS code was passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+### 8.2 Code Validation
 
-   For the CSS validation I chose to check this by direct input as there was only a small amount of file's to check. Upon navigating to the W3C css validator linked above, I ensured the "by direct input" tab was selected. Then in my workspace I selected and copied the entire contents of the css file and pasted it into the text area on the W3C site then clicked the check button. I then repeated this for all other .css files Thankfully after the first round of check's there were no errors found.
+* HTML - No fatal erros were returned when HTML code was passed through the official [W3C Validator](https://validator.w3.org/)
 
-   * Python - No errors were returned when the Python code was passed through the [Python Syntax Chacker](https://extendsclass.com/python-tester.html)
+Once the project was fully deployed to Heroku I chose to validate the HTML files by entering the URL's into the site. Upon navigating to the W3C validator site I copied the deployed Heroku URL and pasted it into the address bar and clicked the check button. I repeated this process for all the URL's within the deployed app and addressed all the errors that came up one by one if there was any. Once I thought all the errors were addressed I redeployed the site to Heroku after a git commit and push in the GitPod workspace then I ran all the URL's through the validator one more time to ensure I had fixed everything.
 
-   To test the python files in this project I used a similar process to the css file. First I navigated to the ExtendClass Python Syntax Checker which is linked above. Then I proceeded to individually copy the entire contents of each .py file I had created and paste the contents into the text area on the ExtendsClass site and click the check python syntax button and for all files I received the "No syntax errors detected" notification for most of the files but there were a few small syntax errors in some of the code taken directly from the Boutique Ado project and I could not remedy them without breaking the functionality of the page so I decided to leave them out. 
+* CSS - No errors were returned when the CSS code was passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-   * Flake8 Errors
+For the CSS validation I chose to check this by direct input as there was only a small amount of file's to check. Upon navigating to the W3C css validator linked above, I ensured the "by direct input" tab was selected. Then in my workspace I selected and copied the entire contents of the css file and pasted it into the text area on the W3C site then clicked the check button. I then repeated this for all other .css files Thankfully after the first round of check's there were no errors found.
 
-   The final piece of code validation I used was in the workspace terminal itself. I typed the command "python3 -m flake8" into the terminal which outputted all the problems within all the files in the workspace and I was able to go through them one by one by holding Ctrl and clicking the link provided which brought me to the exact line of code that was effected. I ignored any warnings from files that were automaticall generated such a migrations so as not to mess with the efficiency of these files and suck to solving any linting issues in files I had created myself. I had to remove some files that were not being used to solve some of the problems and most of the other issues were "line too long" problems or unused import errors. After solving all the relevant issues I was left with mostly line too long errors which I left alone.
+* Python - No errors were returned when the Python code was passed through the [Python Syntax Chacker](https://extendsclass.com/python-tester.html)
 
-### 8.2 fixed bugs
+To test the python files in this project I used a similar process to the css file. First I navigated to the ExtendClass Python Syntax Checker which is linked above. Then I proceeded to individually copy the entire contents of each .py file I had created and paste the contents into the text area on the ExtendsClass site and click the check python syntax button and for all files I received the "No syntax errors detected" notification for most of the files but there were a few small syntax errors in some of the code taken directly from the Boutique Ado project and I could not remedy them without breaking the functionality of the page so I decided to leave them out. 
+
+* Flake8 Errors
+
+The final piece of code validation I used was in the workspace terminal itself. I typed the command "python3 -m flake8" into the terminal which outputted all the problems within all the files in the workspace and I was able to go through them one by one by holding Ctrl and clicking the link provided which brought me to the exact line of code that was effected. I ignored any warnings from files that were automaticall generated such a migrations so as not to mess with the efficiency of these files and suck to solving any linting issues in files I had created myself. I had to remove some files that were not being used to solve some of the problems and most of the other issues were "line too long" problems or unused import errors. After solving all the relevant issues I was left with mostly line too long errors which I left alone.
+
+### 8.3 Fixed Bugs
 
 A lot of small bugs cropped up during the development process mainly consisting of indentation errors, spelling mistakes and various misplaced brackets. Most of these were easily identified thanks to the DEBUG function within my Github workspace but others needed a little more head scratching.
 
 One strange bug that sticks out for me was with Amazon Web Services (AWS) - It is my first time using this service to store the static files for a project and after I had set up my S3 bucket, added the group / user / policy and entered all the credentials in setting.py my static files still would not load into AWS and my Heroku app kept failing to load the static files during the build process. After combing through the code for hours I had to turn to tutor support where we eventually figured out it was an issue with the Access key ID and Secret access key. After regenerating both of these numerous times and eventually getting one without any /'s in it the Heroku build finally succeeded and the static folder was created in the bucket. This lesson I wouldn't soon forget!
 
 Another bug which cropped up later in development was with connecting my GitHub repository to the Heroku dashboard to allow automatic deploy's. It turned out to be an ongoing security issue and this feature had been disabled. The solution was to remotly deploy the site from my GitPod workspace using the following commands in the terminal:
-    1. heroku login -i
-    2. Then enter the relevant login details
-    3. heroku apps (to show a list of all your heroku apps)
-    4. heroku git:remote -a your-app-name
-    5. git add .
-    6. git commit -m "Deploy to Heroku via CLI"
-    7. git push origin main
-    8. git push heroku main (This would then start the app build and the progress could be seen in the terminal and Heroku's activity tab also)
+1. heroku login -i
+2. Then enter the relevant login details
+3. heroku apps (to show a list of all your heroku apps)
+4. heroku git:remote -a your-app-name
+5. git add .
+6. git commit -m "Deploy to Heroku via CLI"
+7. git push origin main
+8. git push heroku main (This would then start the app build and the progress could be seen in the terminal and Heroku's activity tab also)
 
 
-### 8.3 supported screens and browsers
+### 8.4 Supported Screens and Browsers
 
 ReddyFitFast was developed entirely on the Google Chrome browser. Using the built developeer tools function really helped identify and target elements I needed to change even if it was only to experiment. Using this tool combined with media queries and the very convienient bootstrap display and colum classes I was albe to make the site look clean on all sizes, from extra large desktops down to mobile.  
 

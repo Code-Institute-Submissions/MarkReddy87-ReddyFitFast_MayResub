@@ -10,7 +10,7 @@ from .models import WishList
 @login_required
 def wishlist(request):
     """ view to show wishlist """
-    user_wishlist = WishList.objects.get(user=request.user)
+    user_wishlist, _ = WishList.objects.get_or_create(user=request.user)
     list_items = user_wishlist.wished_items.all()
 
     context = {
