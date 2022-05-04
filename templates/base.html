@@ -1,4 +1,6 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="eng">
 
 <head>
     {% block meta %}
@@ -73,7 +75,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a href="#" class="nav-link button-orange rounded-pill" id="user-options" data-toggle="dropdown"
+                        <a href="#" class="nav-link button-orange rounded-pill" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg"></i></div>
@@ -240,7 +242,7 @@
                                                 id="mc-embedded-subscribe" class="button">
                                             <p class="brandingLogo"><a href="http://eepurl.com/hSocDn"
                                                     title="Mailchimp - email marketing made easy and fun"><img
-                                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
+                                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="MailChimp Image"></a>
                                             </p>
                                         </div>
                                     </div>
@@ -250,7 +252,9 @@
                         <!--End mc_embed_signup-->
                     </div>
                     <div class="col-12">
-                        <a class="button-orange rounded-pill btn-lg border-orange mt-1 ml-2 text-decoration-none" href="https://www.privacypolicygenerator.info/live.php?token=Gq1kV5zjBStSXH19nYf0YbklzfdwkEZ6" target="_blank" rel="noopener">
+                        <a class="button-orange rounded-pill btn-lg border-orange mt-1 ml-2 text-decoration-none"
+                            href="https://www.privacypolicygenerator.info/live.php?token=Gq1kV5zjBStSXH19nYf0YbklzfdwkEZ6"
+                            target="_blank" rel="noopener">
                             <span class="icon">
                                 <i class="fas fa-file-alt"></i>
                             </span>
@@ -263,11 +267,11 @@
     </footer>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-    <script type='text/javascript'>
+    <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+    <script>
         (function ($) {
             window.fnames = new Array();
             window.ftypes = new Array();
