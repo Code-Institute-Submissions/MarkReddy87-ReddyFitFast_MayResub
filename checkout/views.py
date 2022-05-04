@@ -1,10 +1,13 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+""" imports below """
+import json
+from django.shortcuts import (
+                              render, redirect, reverse,
+                              get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 import stripe
-import json
 
 from products.models import Product
 from profiles.forms import UserProfileForm
@@ -76,7 +79,8 @@ def checkout(request):
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information')
@@ -84,7 +88,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There are no items in your shopping bag right now")
+            messages.error(request,
+                           "There are no items in your shopping bag right now")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -96,7 +101,7 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any user info from profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

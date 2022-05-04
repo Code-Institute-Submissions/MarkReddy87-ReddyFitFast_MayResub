@@ -1,7 +1,6 @@
 """ Add relevant imports below """
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from .models import Review
 from .forms import ReviewForm
 
@@ -40,7 +39,9 @@ def add_review(request):
             messages.success(request, 'Successfully added review!')
             return redirect(reverse('review'))
         else:
-            messages.error(request, 'Failed to add review. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to add review.\
+                            Please ensure the form is valid.')
     else:
         form = ReviewForm()
 
@@ -62,7 +63,9 @@ def edit_review(request, review_id):
             messages.success(request, 'Successfully updated review!')
             return redirect(reverse('review_detail', args=[review.id]))
         else:
-            messages.error(request, 'Failed to update review. Please ensure the form is valid.')
+            messages.error(request,
+                           'Failed to update review.\
+                            Please ensure the form is valid.')
     else:
         form = ReviewForm(instance=review)
         messages.info(request, f'You are editing {review.title}')
