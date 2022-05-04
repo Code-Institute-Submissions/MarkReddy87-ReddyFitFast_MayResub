@@ -248,7 +248,7 @@ On the AWS site once you have created an account you can then search for and add
 * [Amazon Web Services](https://aws.amazon.com/) for hosting static files and images.
 * [Balsamiq Wireframes](https://balsamiq.com/wireframes/) for creation of site wireframes.
 * [Stripe](https://stripe.com/en-ie) for the sites payment functionality.
-* [Lucid](https://lucid.app/) for the design of the data schema.
+* [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline/) for the design of the data schema.
 * [XML Sitemaps](https://www.xml-sitemaps.com/) for generating the sitemap.xml file.
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
