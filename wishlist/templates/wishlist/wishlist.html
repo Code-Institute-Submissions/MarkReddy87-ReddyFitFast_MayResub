@@ -24,7 +24,7 @@
             <div class="col-12 mt-3">
                 <div class="row">
                     {% for product in list_items %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-2">
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
                             <div class="card h-100 border-orange">
                                 {% if product.image %}
                                     <a href="{% url 'product_detail' product.id %}">
