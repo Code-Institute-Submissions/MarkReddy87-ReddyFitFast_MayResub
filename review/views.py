@@ -75,6 +75,7 @@ def edit_review(request, review_id):
 
     return render(request, template, context)
 
+
 def delete_review(request, review_id):
     """ Delete a review from the site """
     review = get_object_or_404(Review, pk=review_id)

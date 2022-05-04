@@ -1,3 +1,4 @@
+""" imports below """
 from django import forms
 from .models import Review
 
@@ -23,7 +24,7 @@ class ReviewForm(forms.ModelForm):
         self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
-                placeholder = f'{placeholders[field]}'
+                placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder

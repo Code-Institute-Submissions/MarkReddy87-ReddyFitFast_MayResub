@@ -1,3 +1,4 @@
+""" imports below """
 from django.apps import AppConfig
 
 
@@ -7,4 +8,5 @@ class CheckoutConfig(AppConfig):
     name = 'checkout'
 
     def ready(self):
+        """ ready function """
         import checkout.signals

@@ -1,3 +1,4 @@
+""" relevant imports below """
 from django.contrib import admin
 from .models import Product, Category
 
