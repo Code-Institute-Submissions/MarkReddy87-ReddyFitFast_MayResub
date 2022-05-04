@@ -61,7 +61,9 @@ After reviewing feed back from the my project assessor I drafted a number of new
 
 ## 3. Features
 
-The Django framework allows developers to include such a wide variety of features in a short amount of time and this project has only touched the surface of what someone might be capable of doing. Below I will outline some of the main features of Reddy<strong>Fit</strong>Fast accompanied with screenshots from the live site. 
+The Django framework allows developers to include such a wide variety of features in a short amount of time and this project has only touched the surface of what someone might be capable of doing. Below I will outline some of the main / security features of Reddy<strong>Fit</strong>Fast accompanied with screenshots from the live site. 
+
+### 3.1 Main Features
 
 1. The Navigation Bar
 
@@ -117,13 +119,23 @@ For the newsletter signup function I chose to use the Mailchimp service which wa
 
 The wishlist feature add's a nice touch for users to add items to a list so they can be saved for later. This can only be accessed by logged in registered users and each detail page product has a button that will add or remove the item from the users wishlist.
 
-![Wishlist screen shot]()
+![Wishlist screen shot](media/project_screenshots/wishlist_ss.PNG)
 
 10. Footer 
 
 The footer for the site which is consistant across all pages contains multiple fully responsive social media icon links which will bring the customer to the facebook business page as well as other popular social media sites and also a link to the repository for the site itself.
 
 ![Footer screenshot](media/project_screenshots/footer_ss.PNG)
+
+### 3.1 Security Features
+
+One of the main security features present in this project is the use of the Cross-Site Request Forgery(csrf) token which is present on all forms across the site. This token is used to send requests to the server and is tied to the user's session allowing the forms to be validated and protect the data against cross-site request forgery.
+
+Another security feature present in this project is the use of a django super user. This is created in the development enviornment with a Username, Email and Password. We type the command "python3 manage.py createsuperuser" into the terminal within the GitHub workspace and follow the prompts to create the account. Once created this gives the user full access to the admin panel of the site allowing them to create, edit and delete data in the database.
+
+The site is designed in a way so that only registered users can access the full functionality of the site when it comes to writing a review and accessing the wishlist feature. This was achieved mostly by using the @loginrequired decorator on the relevant view functiona as well as simple if/else statements within the html templates and only displaying the crispy form content if the user is authenticated. If not the user is prompted to register for an account to gain full access.
+
+Another security feature implemented was giving only the superuser full CRUD access to the products on the front end. On the relevant pages the site checked if the registered user was also the superuser and if so an extra set of buttons would be displayed allowing editing and deletion of the products within the store.
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
@@ -147,7 +159,7 @@ For the main font I chose "Poppins" from the Google Fonts collection, I thought 
 
 [Link to Project Wireframes](https://balsamiq.cloud/s1wvfc3/php43ry/rCF52).
 
-I found using Balsamiq wireframes very beneficial. This is a great tool to use during the project inception. It allows the user to plan out every page you want to create with great detail and with the variety elements to choose from I feel it can inspire you to come up with new ideas. After creating my wireframes I found myself using them as a constant reference during the coding process.
+I found using Balsamiq wireframes very beneficial. This is a great tool to use during the project inception. It allows the user to plan out every page you want to create with great detail and with the variety elements to choose from I feel it can inspire you to come up with new ideas. After creating my wireframes I found myself using them as a constant reference during the coding process. I also downloaded the .bmpr file and a pdf version of the wireframe project, both of which are present in media/wireframes folder.
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
@@ -164,7 +176,6 @@ I found using Balsamiq wireframes very beneficial. This is a great tool to use d
 * [Stripe](https://en.wikipedia.org/wiki/Stripe_(company))
 * [Gunicorn](https://en.wikipedia.org/wiki/Gunicorn)
 * [Amazon Web Services](https://aws.amazon.com/)
-* [Lucid](https://lucid.app/)
 
 <p align="right">(<a href="#top">Back to Top</a>)</p>
 
@@ -173,17 +184,41 @@ I found using Balsamiq wireframes very beneficial. This is a great tool to use d
 
 An abumdance of manual testing was done throughout the development of this project. Before every workspace commit I try would ensure the functionality I was trying to implement was working how I wanted it too by starting the development server and try out that specific function. If there was an issue I would note it in my commit message and come back to it at a later date. This way I was able to keep errors to a minimum. After deploying my project to Heroku I manually retested all the main functionalities to ensure nothing had gone wrong during the process. Naturally there were some issues some of which I will outline in a section below.
 
-### 8.1 code validation
 
-   * HTML - All HTML files were passed through the official [W£C Validator](https://validator.w3.org/#validate_by_input) - I was left with only one fatal error coming from bag.html. The error was cause by a Django Template inheritance for loop and I couldn't find a way around this one without breaking the code. All other no fatal error's seem to be related to Django Template inheritance syntax and seem to be unavoidable.
-   * Python - 
-   * CSS - No errors were returned after all CSS files were passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+   ### 8.1 code validation
+
+   * HTML - No fatal erros were returned when HTML code was passed through the official [W3C Validator](https://validator.w3.org/)
+
+   Once the project was fully deployed to Heroku I chose to validate the HTML files by entering the URL's into the site. Upon navigating to the W3C validator site I copied the deployed Heroku URL and pasted it into the address bar and clicked the check button. I repeated this process for all the URL's within the deployed app and addressed all the errors that came up one by one if there was any. Once I thought all the errors were addressed I redeployed the site to Heroku after a git commit and push in the GitPod workspace then I ran all the URL's through the validator one more time to ensure I had fixed everything.
+
+   * CSS - No errors were returned when the CSS code was passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+
+   For the CSS validation I chose to check this by direct input as there was only a small amount of file's to check. Upon navigating to the W3C css validator linked above, I ensured the "by direct input" tab was selected. Then in my workspace I selected and copied the entire contents of the css file and pasted it into the text area on the W3C site then clicked the check button. I then repeated this for all other .css files Thankfully after the first round of check's there were no errors found.
+
+   * Python - No errors were returned when the Python code was passed through the [Python Syntax Chacker](https://extendsclass.com/python-tester.html)
+
+   To test the python files in this project I used a similar process to the css file. First I navigated to the ExtendClass Python Syntax Checker which is linked above. Then I proceeded to individually copy the entire contents of each .py file I had created and paste the contents into the text area on the ExtendsClass site and click the check python syntax button and for all files I received the "No syntax errors detected :)" notification.
+
+   * Flake8 Errors
+
+   The final piece of code validation I used was in the workspace terminal itself. I typed the command "python3 -m flake8" into the terminal which outputted all the problems within all the files in the workspace and I was able to go through them one by one by holding Ctrl and clicking the link provided which brought me to the exact line of code that was effected. I ignored any warnings from files that were automaticall generated such a migrations so as not to mess with the efficiency of these files and suck to solving any linting issues in files I had created myself. I had to remove some files that were not being used to solve some of the problems and most of the other issues were "line too long" problems or unused import errors. After solving all the relevant issues I was left with 
 
 ### 8.2 fixed bugs
 
 A lot of small bugs cropped up during the development process mainly consisting of indentation errors, spelling mistakes and various misplaced brackets. Most of these were easily identified thanks to the DEBUG function within my Github workspace but others needed a little more head scratching.
 
 One strange bug that sticks out for me was with Amazon Web Services (AWS) - It is my first time using this service to store the static files for a project and after I had set up my S3 bucket, added the group / user / policy and entered all the credentials in setting.py my static files still would not load into AWS and my Heroku app kept failing to load the static files during the build process. After combing through the code for hours I had to turn to tutor support where we eventually figured out it was an issue with the Access key ID and Secret access key. After regenerating both of these numerous times and eventually getting one without any /'s in it the Heroku build finally succeeded and the static folder was created in the bucket. This lesson I wouldn't soon forget!
+
+Another bug which cropped up later in development was with connecting my GitHub repository to the Heroku dashboard to allow automatic deploy's. It turned out to be an ongoing security issue and this feature had been disabled. The solution was to remotly deploy the site from my GitPod workspace using the following commands in the terminal:
+    1. heroku login -i
+    2. Then enter the relevant login details
+    3. heroku apps (to show a list of all your heroku apps)
+    4. heroku git:remote -a your-app-name
+    5. git add .
+    6. git commit -m "Deploy to Heroku via CLI"
+    7. git push origin main
+    8. git push heroku main (This would then start the app build and the progress could be seen in the terminal and Heroku's activity tab also)
+
 
 ### 8.3 supported screens and browsers
 
