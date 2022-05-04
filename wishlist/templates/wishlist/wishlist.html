@@ -14,10 +14,12 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <h2 class="logo-font mb-3 mt-4 ml-3">Check out your wishlist below</h2>
-    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'add_review' %}">Write a review</a></span>
-    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'products' %}">Back to Shopping</a></span>
-    <div class="container-fluid">
+    <div class="container mb-3">
+        <div class="row">
+            <div class="col">
+                <h2 class="logo-font mb-5 mt-4">Your Wishlist</h2>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12 mt-3">
                 <div class="row">
@@ -59,9 +61,21 @@
                             </div>
                         </div>
                     {% empty %}
-                        <h4 class="logo-font mb-3 mt-4 ml-3">You currently have no items in your wishlist</h4>
+                    <p class="lead mb-5 ml-3">You currently have no items in your wishlist</p>
                     {% endfor %}
                 </div>
+                <a class="button-orange rounded-pill btn-lg border-orange mt-1 text-decoration-none" href="{% url 'products' %}">
+                    <span class="icon">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                    <span class="text-uppercase">Back to Shopping</span>
+                </a>
+                <a class="button-orange rounded-pill btn-lg border-orange mt-1 ml-2 text-decoration-none" href="{% url 'add_review' %}">
+                    <span class="icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </span>
+                    <span class="text-uppercase">Write a review</span>
+                </a>
             </div>
         </div>
     </div>
