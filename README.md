@@ -7,8 +7,7 @@
 
 ## 1. Purpose of the project
 
-The purpose of this project was to create a fully fledged Ecommerce website where the business model was focused on business to consumer (B2C) activity. Individuals can visit the site and purchase fitness goods and services and have them delivered directly to their home's or their Email inbox. Another main goal of the site was to create a community through the use of social media business pages and further online content site user's could access. I hope to target a wide range of consumers with the product's and service's available on this page by including exercise plans, meal plans, equipment and products for people who just starting their fitness journy all the way up to seasoned gym veteran's.
-
+The purpose of this project was to create a fully fledged fitness Ecommerce website where the business model was focused on business to consumer (B2C) activity. Individuals can visit the site and purchase fitness goods and services and have them delivered directly to their home's or their Email inbox. Another main goal of the site was to create a community through the use of social media business pages, the sites review functionality and further online content site's user's could access from the main site footer. I hope to target a wide age range of consumers with the product's and service's available on this page. I aim to target individuals who are not sure how to start their fitness journy, they might want to focus on their diet, starting exercising at home and become a fully fledged gym fanatic. By including varied exercise plans, meal plans, exercise equipment and products I feel that I can tap into the corner of the market.
 
 ## 2. User stories
 
@@ -102,11 +101,11 @@ The left side of the profile page shows a form prefilled with the users billing 
 
 ![Profile page screenshot](media/project_screenshots/my_profile_ss.PNG)
 
-7. Review page 
+7. Review's page 
 
-The review page shows a form which any site user can fill out and submit a review to the site which when approved by the site admin will appear under for in a bootstrap card alongside previous approved reviews from other site users.
+The review page shows nicely laid out bootstrap cards, all of which are clickable, containing reviews from other site users describing their experience's. Also displayed are two buttons, one will take you to the form which any registered user can fill out and submit their review to the site. The other brings the site user back to the products page.
 
-![Review form screenshot](media/project_screenshots/review_ss.PNG)
+![Review's page screenshot](media/project_screenshots/reviews_page_ss.PNG)
 
 8. Newsletter Signup
 
@@ -114,7 +113,13 @@ For the newsletter signup function I chose to use the Mailchimp service which wa
 
 ![Mailchimp newsletter signup screenshot](media/project_screenshots/newsletter_signup_ss.PNG)
 
-9. Footer 
+9. Wishlist
+
+The wishlist feature add's a nice touch for users to add items to a list so they can be saved for later. This can only be accessed by logged in registered users and each detail page product has a button that will add or remove the item from the users wishlist.
+
+![Wishlist screen shot]()
+
+10. Footer 
 
 The footer for the site which is consistant across all pages contains multiple fully responsive social media icon links which will bring the customer to the facebook business page as well as other popular social media sites and also a link to the repository for the site itself.
 
@@ -171,6 +176,7 @@ An abumdance of manual testing was done throughout the development of this proje
 ### 8.1 code validation
 
    * HTML - All HTML files were passed through the official [W£C Validator](https://validator.w3.org/#validate_by_input) - I was left with only one fatal error coming from bag.html. The error was cause by a Django Template inheritance for loop and I couldn't find a way around this one without breaking the code. All other no fatal error's seem to be related to Django Template inheritance syntax and seem to be unavoidable.
+   * Python - 
    * CSS - No errors were returned after all CSS files were passed through the official [Jigsaw Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
 ### 8.2 fixed bugs

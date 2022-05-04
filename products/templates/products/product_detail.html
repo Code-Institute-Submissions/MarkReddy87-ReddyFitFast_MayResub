@@ -92,6 +92,12 @@
                                         </span> 
                                         <span class="text-uppercase">Add to wishlist</span>
                                     </a>
+                                    <a class="btn button-orange border-orange rounded-pill mt-4" href="{% url 'remove_from_wishlist' product.id %}">
+                                        <span class="icon">
+                                            <i class="fas fa-magic"></i>
+                                        </span> 
+                                        <span class="text-uppercase">Remove from wishlist</span>
+                                    </a>
                                 {% endif %}
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
