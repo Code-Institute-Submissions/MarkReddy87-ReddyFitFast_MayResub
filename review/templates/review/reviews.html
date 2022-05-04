@@ -14,12 +14,30 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <h2 class="logo-font mb-3 mt-4 ml-3">Check out our Review's Below</h2>
-    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'add_review' %}">Write a review</a></span>
-    <span><a class="btn button-orange border-orange rounded-pill ml-3" href="{% url 'products' %}">Back to Shopping</a></span>
-    <div class="container-fluid">
+    <div class="container mb-3">
         <div class="row">
-            <div class="col-12 mt-3">
+            <div class="col">
+                <h2 class="logo-font mb-5 mt-4">Check out our Review's Below</h2>
+                <span>
+                    <a class="button-orange rounded-pill btn-lg border-orange mt-3 text-decoration-none" href="{% url 'add_review' %}">
+                        <span class="icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </span>
+                        <span class="text-uppercase">Write a review</span>
+                    </a>
+                </span>
+                <span>
+                    <a class="button-orange rounded-pill btn-lg border-orange mt-3 ml-3 text-decoration-none" href="{% url 'products' %}">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Shopping</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mt-5">
                 <div class="row">
                     {% for review in reviews %}
                     <div class="col-md-4">
